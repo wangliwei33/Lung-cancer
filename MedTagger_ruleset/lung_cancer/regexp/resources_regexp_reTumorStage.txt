@@ -1,0 +1,13 @@
+Ia
+Ib
+IIa
+IIb
+IIIa
+IIIb
+IV
+Early stage
+Extensive
+Late stage
+Limited
+Metastatic
+Metastasis

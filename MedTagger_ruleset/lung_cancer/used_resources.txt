@@ -1,0 +1,9 @@
+./regexp/resources_regexp_reHistology.txt
+./regexp/resources_regexp_reTumorGrade.txt
+./regexp/resources_regexp_reTumorStage.txt
+./regexp/resources_regexp_reChemo.txt
+./regexp/resources_regexp_reRadio.txt
+./regexp/resources_regexp_reSurgery.txt
+./regexp/resources_regexp_reRem.txt
+./regexp/resources_regexp_reRemove.txt
+./rules/resources_rules_matchrules.txt

@@ -1,0 +1,237 @@
+//outcome, i.e, treatment response
+RULENAME="cm_rResponse1",REGEXP="\b(?i)(complete remission|complete response|no evidence of active disease|negative\w{0,5}\s*PET scan|PET scan\w{0,5}\s*negative)\b",LOCATION="NA",NORM="Outcome_Complete response"
+
+RULENAME="cm_rResponse2",REGEXP="\b(?i)(Partial remission|Partial response|Positive response|Excellent response|Near complete response|Much response|some response|respond\w{0,5}\s*favorably|enough of a response|nice regression|regression of disease|residual(\s+\S+){0,5}\s*disease|good response|apparent response|significant response| PR |PR response|good response|responding(\s+\S+)\s*well|marked reduction|nice response|dramatic response|(decreased|residual)(\s+\S+){0,5}\s*(tumor|adenopathy))\b",LOCATION="NA",NORM="Outcome_Partial response"
+
+RULENAME="cm_rResponse3",REGEXP="\b(?i)(Mixed response|Progressive disease|Progression of disease|progressive cancer|significant progression|have recurrence|progressive enlargement|in response to an increase|progression|progressive|(shrink|shrank|shrunk)(\s+\S+){0,3}\s*tumor|tumor(\s+\S+){0,3}\s*(shrink|shrank|shrunk)|markedly smaller|progression)\b",LOCATION="NA",NORM="Outcome_Progressive disease"
+
+RULENAME="cm_rResponse4",REGEXP="\b(?i)(stable disease)\b",LOCATION="NA",NORM="Outcome_Stable disease"
+
+
+//examination
+RULENAME="cm_rExamination1",REGEXP="\b(?i)(Bronchoscopy)\b",LOCATION="NA",NORM="Examination_Bronchoscopy"
+RULENAME="cm_rExamination2",REGEXP="\b(?i)(biopsy)\b",LOCATION="NA",NORM="Examination_Biopsy"
+RULENAME="cm_rExamination3",REGEXP="\b(?i)(CT)\b",LOCATION="NA",NORM="Examination_CT"
+RULENAME="cm_rExamination4",REGEXP="\b(?i)(PET)\b",LOCATION="NA",NORM="Examination_PET"
+RULENAME="cm_rExamination5",REGEXP="\b(?i)(x(\-)?ray)\b",LOCATION="NA",NORM="Examination_Xray"
+RULENAME="cm_rExamination6",REGEXP="\b(?i)(Lobectomy)\b",LOCATION="NA",NORM="Examination_Lobectomy"
+RULENAME="cm_rExamination7",REGEXP="\b(?i)(Thoracotomy)\b",LOCATION="NA",NORM="Examination_Thoracotomy"
+RULENAME="cm_rExamination8",REGEXP="\b(?i)(pathology|path)\b",LOCATION="NA",NORM="Examination_Path"
+
+//Diagnosis, in order to label diagnosis date especially in path reports
+RULENAME="cm_rDiagnosis1",REGEXP="\b(?i)(diagnosis)\b",LOCATION="NA",NORM="Diagnosis_Diagnosis"
+
+//symptoms associated with date, for further extraction of histology
+RULENAME="cm_rSymptom1",REGEXP="\b(?i)(hemoptysis)\b",LOCATION="NA",NORM="Symptom_Hemoptysis"
+RULENAME="cm_rSymptom2",REGEXP="\b(?i)(lesion)\b",LOCATION="NA",NORM="Symptom_Lesion"
+
+//Negative for malignancy
+RULENAME="cm_rDiagnosis2",REGEXP="(?i)(Negative\s*for\s*malignan|Nondiagnostic for malignancy|Not diagnostic of malignancy|Not diagnostic for malignancy)",LOCATION="NA",NORM="Diagnosis_Negative for malignancy"
+
+
+//Positive for malignancy
+RULENAME="cm_rDiagnosis3",REGEXP="(?i)(Positive\s*for\s*malignan)",LOCATION="NA",NORM="Diagnosis_Positive for malignancy"
+RULENAME="cm_rDiagnosis4",REGEXP="(?i)(mass|nodule|malignan)(\w{0,2})?(\s+\S+){0,6} (lung|interlobar|trachea|Bronch|lobe|lobar|sputum|Pleural|left(\s+\S+){0,5} lobe|right(\s+\S+){0,5} lobe|chest|thorac|pulmanory)(\w{0,2})?",LOCATION="NA",NORM="Diagnosis_Malignancy"
+RULENAME="cm_rDiagnosis5",REGEXP="(?i)(lung|interlobar|trachea|Bronch|lobe|lobar|sputum|Pleural|left(\s+\S+){0,5} lobe|right(\s+\S+){0,5} lobe|chest|thorac|pulmanory)(\w{0,2})?(\s+\S+){0,6} (malignan|mass|nodule)(\w{0,2})?",LOCATION="NA",NORM="Diagnosis_Malignancy"
+RULENAME="cm_rDiagnosis6",REGEXP="\b(?i)lung(\s+\S+){0,6} (carcinoma|cancer|tumor)\b",LOCATION="NA",NORM="Diagnosis_Cancer"
+RULENAME="cm_rDiagnosis7",REGEXP="\b(?i)(carcinoma|cancer|tumor)(\W)?(\s+\S+){0,6} lung\b",LOCATION="NA",NORM="Diagnosis_Cancer"
+RULENAME="cm_rDiagnosis8",REGEXP="(?i)history(\s+\S+){0,6} (lung|interlobar|trachea|Bronch|lobe|lobar|sputum|Pleural|left(\s+\S+){0,5} lobe|right(\s+\S+){0,5} lobe|chest|thorac|pulmanory)(\w{0,2})?",LOCATION="NA",NORM="Diagnosis_History"
+RULENAME="cm_rDiagnosis9",REGEXP="(?i)(lung|interlobar|trachea|Bronch|lobe|lobar|sputum|Pleural|left(\s+\S+){0,5} lobe|right(\s+\S+){0,5} lobe|chest|thorac|pulmanory)(\w{0,2})?(\s+\S+){0,6} history",LOCATION="NA",NORM="Diagnosis_History"
+
+
+//date
+RULENAME="cm_rDate1",REGEXP="\b(?i)(\d+\/\d+\/\d+)\b",LOCATION="NA",NORM="Diagnosis_Date"
+RULENAME="cm_rDate1",REGEXP="\b(?i)(\d+\-\d+\-\d+)\b",LOCATION="NA",NORM="Diagnosis_Date"
+
+
+//primary
+RULENAME="cm_rPrimary1",REGEXP="\b(?i)(pulmonary primary)\b",LOCATION="NA",NORM="Diagnosis_lung primary"
+RULENAME="cm_rPrimary2",REGEXP="\b(?i)(pulmonary origin)\b",LOCATION="NA",NORM="Diagnosis_lung primary"
+RULENAME="cm_rPrimary3",REGEXP="\b(?i)(lung primary)\b",LOCATION="NA",NORM="Diagnosis_lung primary"
+RULENAME="cm_rPrimary4",REGEXP="\b(?i)(lung origin)\b",LOCATION="NA",NORM="Diagnosis_lung origin"
+
+
+//Histology
+
+RULENAME="cm_rHistology1",REGEXP="\b(?i)((Acinar adenocarcinoma)|Adenocarcinoma)\b",LOCATION="NA",NORM="Histology_Adenocarcinoma"
+RULENAME="cm_rHistology2",REGEXP="\b(?i)(Adenosquamous)\b",LOCATION="NA",NORM="Histology_Adenosquamous"
+RULENAME="cm_rHistology3",REGEXP="\b(?i)(Carcinoid)\b",LOCATION="NA",NORM="Histology_carcinoid"
+RULENAME="cm_rHistology4",REGEXP="\b(?i)(Atypical(\s*)carcinoid|Typical(\s*)carcinoid)\b",LOCATION="NA",NORM="Histology_Carcinoid typical /atypical"
+
+//RULENAME="cm_rHistology5",REGEXP="\b(?i)(combined(\s*)small(\s*)cell)\b",LOCATION="NA",NORM="Histology_Combined small cell"
+
+RULENAME="cm_rHistology6",REGEXP="\b(?i)(Neuroendocrine|large(\s*)cell|large(\s*)cell(\s*)neuroendocrine)\b",LOCATION="NA",NORM="Histology_Large /  larger neuroendocrine"
+RULENAME="cm_rHistology7",REGEXP="\b(?i)(Non(\s*|-)small(\s*|-)cell|NSCC|NSCC NOS|large cell)\b",LOCATION="NA",NORM="Histology_Non-small cell"
+RULENAME="cm_rHistology8",REGEXP="\b(?i)(small(\s*|-)cell)\b",LOCATION="NA",NORM="Histology_Small cell"
+RULENAME="cm_rHistology9",REGEXP="\b(?i)((squamous|squanous)\W? (\S+\s+){0,15}(carcinoma|cancer))\b",LOCATION="NA",NORM="Histology_Squamous"
+RULENAME="cm_rHistology91",REGEXP="\b(?i)((carcinoma|cancer)\W? (\S+\s+){0,15}(squamous|squanous))\b",LOCATION="NA",NORM="Histology_Squamous"
+RULENAME="cm_rHistology10",REGEXP="\b(?i)(spindle cell carcinoma|Pleomorphic carcinoma|Pulmonary blastoma|Giant cell carcinoma|Lymphoepithelioma(\s+|\-)like carcinoma|Nuclear protein in testis carcinoma|NUT carcinoma|Salivary gland-type|Mucoepidermoid carcinoma|Adenoid cystic carcinoma|Epithelial-myoepithelial carcinoma)\b",LOCATION="NA",NORM="Histology_other cell type /Unknown"
+RULENAME="cm_rHistology11",REGEXP="\b(?i)(bronchioloalveolar carcinoma|bronchoalveolar carcinoma)\b",LOCATION="NA",NORM="Histology_bronchioloalveolar carcinoma"
+RULENAME="cm_rHistology12",REGEXP="\b(?i)(atypical epithelial cell)\b",LOCATION="NA",NORM="Histology_Atypical Epithelial Cell"
+RULENAME="cm_rHistology13",REGEXP="\b(?i)(adenocarcinoma)\b",LOCATION="NA",NORM="Histology_Adenocarcinoma"
+
+RULENAME="cm_rHistology15",REGEXP="\b(?i)(Squamous cell carcinoma in situ|In situ squamous cell carcinoma)\b",LOCATION="NA",NORM="Histology_Squamous Cell in situ"
+RULENAME="cm_rHistology16",REGEXP="\b(?i)(Preinvasive lesion)\b",LOCATION="NA",NORM="Histology_Preinvasive lesion"
+RULENAME="cm_rHistology17",REGEXP="\b(?i)(Adenocarcinoma in situ)\b",LOCATION="NA",NORM="Histology_Adenocarcinoma in situ"
+RULENAME="cm_rHistology18",REGEXP="\b(?i)(Sarcomatoid)\b",LOCATION="NA",NORM="Histology_Sarcomatoid"
+RULENAME="cm_rHistology19",REGEXP="\b(?i)((Carcinoma|adenocarcinoma|small cell|non(\-|\s+)cell)\W? (\S+\s+){0,5}lung primary)\b",LOCATION="NA",NORM="Histology_Primary"
+RULENAME="cm_rHistology20",REGEXP="\b(?i)(bronchogenic carcinoma)\b",LOCATION="NA",NORM="Histology_Bronchogenic carcinoma"
+RULENAME="cm_rHistology220",REGEXP="\b(?i)(monophasic synovial sarcoma)\b",LOCATION="NA",NORM="Histology_Sarcoma"
+### sarcoma is a sing group, not belonging to "small cell" or "non-small cell"
+ 
+
+
+//grade
+RULENAME="cm_rGrade1",REGEXP="\b(?i)(grade(\s*|-)1|grade(\s*|-)2|grade(\s*|-)I|grade(\s*|-)II|well(\s*|-)differentiation|well(\s*|-)differentiated|low(\s*|-)grade)(.*)(%reHistology)\b",LOCATION="NA",NORM="Grade_well differentiation"
+RULENAME="cm_rGrade2",REGEXP="\b(?i)(%reHistology)(.*)(grade(\s*|-)1|grade(\s*|-)2|grade(\s*|-)I|grade(\s*|-)II|well(\s*|-)differentiation|well(\s*|-)differentiated|low(\s*|-)grade)\b",LOCATION="NA",NORM="Grade_well differentiation"
+RULENAME="cm_rGrade3",REGEXP="\b(?i)(grade(\s*|-)3|grade(\s*|-)III|moderate(\s*|-)differentiation|moderately(\s*|-)differentiated|intermediate(\s*|-)grade)(.*)(%reHistology)\b",LOCATION="NA",NORM="Grade_moderate differentiation"
+RULENAME="cm_rGrade4",REGEXP="\b(?i)(%reHistology)(.*)(grade(\s*|-)3|grade(\s*|-)III|moderate(\s*|-)differentiation|moderately(\s*|-)differentiated|intermediate(\s*|-)grade)\b",LOCATION="NA",NORM="Grade_moderate differentiation"
+RULENAME="cm_rGrade5",REGEXP="\b(?i)(%reHistology)(.*)(grade(\s*|-)4|grade(\s*|-)IV|poorly differentiation|poorly(\s*|-)differentiated|poor differentiation|high(\s*|-)grade|undifferentiated|undifferentiated)\b",LOCATION="NA",NORM="Grade_poorly differentiation"
+RULENAME="cm_rGrade6",REGEXP="\b(?i)(grade(\s*|-)4|grade(\s*|-)IV|poorly differentiation|poorly(\s*|-)differentiated|poor differentiation|high(\s*|-)grade|undifferentiated|undifferentiated)(.*)(%reHistology)\b",LOCATION="NA",NORM="Grade_poorly differentiation"
+RULENAME="cm_rGrade7",REGEXP="\b(?i)(Non-gradeable|Non gradeable)(.*)(%reHistology)\b",LOCATION="NA",NORM="Grade_non gradeable"
+RULENAME="cm_rGrade8",REGEXP="\b(?i)(%reHistology)(.*)(Non-gradeable|Non gradeable)\b",LOCATION="NA",NORM="Grade_non gradeable"
+RULENAME="cm_rGrade9",REGEXP="\b(?i)(pathology|biopsy).*(grade(\s*|-)1|grade(\s*|-)2|grade(\s*|-)I|grade(\s*|-)II|well differentiation|well differentiated|low grade)\b",LOCATION="NA",NORM="Grade_well differentiation"
+RULENAME="cm_rGrade10",REGEXP="\b(?i)(pathology|biopsy).*(grade(\s*|-)3|grade(\s*|-)III|moderate(\s*|-)differentiation|moderately(\s*|-)differentiated|intermediate(\s*|-)grade)\b",LOCATION="NA",NORM="Grade_moderate differentiation"
+RULENAME="cm_rGrade11",REGEXP="\b(?i)(pathology|biopsy).*(grade(\s*|-)4|grade(\s*|-)IV|poorly(\s*|-)differentiation|poorly(\s*|-)differentiated|poor(\s*|-)differentiation|high(\s*|-)grade|undifferentiated|undifferentiated|high grade)\b",LOCATION="NA",NORM="Grade_poorly differentiation"
+RULENAME="cm_rGrade12",REGEXP="\b(?i)(pathology|biopsy).*(Non(\s*|-)gradeable)\b",LOCATION="NA",NORM="Grade_non gradeable"
+RULENAME="cm_rGrade13",REGEXP="\b(?i)(grade(\s*|-)1|grade(\s*|-)2|grade(\s*|-)I|grade(\s*|-)II|well(\s*|-)differentiation|well(\s*|-)differentiated|low(\s*|-)grade).*(pathology|biopsy)\b",LOCATION="NA",NORM="Grade_well differentiation"
+RULENAME="cm_rGrade14",REGEXP="\b(?i)(grade(\s*|-)3|grade(\s*|-)III|moderate(\s*|-)differentiation|moderately(\s*|-)differentiated|intermediate(\s*|-)grade).*(pathology|biopsy)\b",LOCATION="NA",NORM="Grade_moderate differentiation"
+RULENAME="cm_rGrade15",REGEXP="\b(?i)(grade(\s*|-)4|grade(\s*|-)IV|poorly(\s*|-)differentiation|poorly(\s*|-)differentiated|poor(\s*|-)differentiation|high(\s*|-)grade|undifferentiated|undifferentiated|high(\s*|-)grade).*(pathology|biopsy)\b",LOCATION="NA",NORM="Grade_poorly differentiation"
+RULENAME="cm_rGrade16",REGEXP="\b(?i)(Non(\s*|-)gradeable).*(pathology|biopsy)\b",LOCATION="NA",NORM="Grade_non gradeable"
+RULENAME="cm_rGrade17",REGEXP="\b(?i)(undifferentiated|undifferentiation).*(pathology|biopsy)\b",LOCATION="NA",NORM="Grade_undifferentiation"
+RULENAME="cm_rGrade18",REGEXP="\b(?i)(pathology|biopsy).*(undifferentiated|undifferentiation)\b",LOCATION="NA",NORM="Grade_undifferentiation"
+RULENAME="cm_rGrade19",REGEXP="\b(?i)(%reHistology)(.*)(undifferentiated|undifferentiation)\b",LOCATION="NA",NORM="Grade_undifferentiation"
+RULENAME="cm_rGrade20",REGEXP="\b(?i)(undifferentiated|undifferentiation)(.*)(%reHistology)\b",LOCATION="NA",NORM="Grade_undifferentiation"
+
+
+//invasive 
+RULENAME="cm_rGrade3",REGEXP="\b(?i)(invasive(\s*|-)grade(\s*|-)3)(.*)(%reHistology)\b",LOCATION="NA",NORM="Grade_near poor differentiation"
+RULENAME="cm_rGrade14",REGEXP="\b(?i)(invasive(\s*|-)grade(\s*|-)3).*(pathology|biopsy)\b",LOCATION="NA",NORM="Grade_moderate differentiation"
+RULENAME="cm_rGrade10",REGEXP="\b(?i)(pathology|biopsy).*(invasive(\s*|-)grade(\s*|-)3)\b",LOCATION="NA",NORM="Grade_moderate differentiation"
+ 
+ 
+//stage
+
+RULENAME="cm_rStage2",REGEXP="\b(?i)stage(\s*|-)(I|1)(\s*|-)a\b",LOCATION="NA",NORM="Stage_Ia"
+RULENAME="cm_rStage3",REGEXP="\b(?i)(I|1)(\s*|-)b(\s*|-)stage\b",LOCATION="NA",NORM="Stage_Ib"
+RULENAME="cm_rStage4",REGEXP="\b(?i)stage(\s*|-)(I|1)(\s*|-)b\b",LOCATION="NA",NORM="Stage_Ib"
+RULENAME="cm_rStage5",REGEXP="\b(?i)(II|2)(\s*|-)a(\s*|-)stage\b",LOCATION="NA",NORM="Stage_IIa"
+RULENAME="cm_rStage6",REGEXP="\b(?i)stage(\s*|-)(II|2)(\s*|-)a\b",LOCATION="NA",NORM="Stage_IIa"
+RULENAME="cm_rStage7",REGEXP="\b(?i)(II|2)(\s*|-)b(\s*|-)stage\b",LOCATION="NA",NORM="Stage_IIb"
+RULENAME="cm_rStage8",REGEXP="\b(?i)stage(\s*|-)(II|2)(\s*|-)b\b",LOCATION="NA",NORM="Stage_IIb"
+RULENAME="cm_rStage9",REGEXP="\b(?i)(III|3)(\s*|-)a(\s*|-)stage\b",LOCATION="NA",NORM="Stage_IIIa"
+RULENAME="cm_rStage10",REGEXP="\b(?i)stage (III|3)(\s*|-)a\b",LOCATION="NA",NORM="Stage_IIIa"
+RULENAME="cm_rStage11",REGEXP="\b(?i)(III|3)(\s*|-)b(\s*|-)stage\b",LOCATION="NA",NORM="Stage_IIIb"
+RULENAME="cm_rStage12",REGEXP="\b(?i)stage(\s*|-)(III|3)(\s*|-)b\b",LOCATION="NA",NORM="Stage_IIIb"
+RULENAME="cm_rStage13",REGEXP="\b(?i)stage(\s*|-)(METASTASIS|Metastatic|IV|4)\b",LOCATION="NA",NORM="Stage_IV"
+RULENAME="cm_rStage14",REGEXP="\b(?i)(METASTASIS|Metastatic|IV|4)(\s*|-)stage\b",LOCATION="NA",NORM="Stage_IV"
+RULENAME="cm_rStage15",REGEXP="\b(?i)Metastatic(\s*|-)(Adenocarcinoma|Adenosquamous|Carconoid typical \/atypical|Large \/  larger neuroendocrine|Non(\s*|-)small(\s*|-)cell|Squamous|carcinoid|moderate differentiation)\b",LOCATION="NA",NORM="Stage_IV"
+RULENAME="cm_rStage16",REGEXP="\b(?i)Metastatic(\s*|-)lung cancer\b",LOCATION="NA",NORM="Stage_IV"
+RULENAME="cm_rStage17",REGEXP="\b(?i)(late(\s*|-)Stage)\b",LOCATION="NA",NORM="Stage_Late stage"
+RULENAME="cm_rStage18",REGEXP="\b(?i)(early(\s*|-)Stage)\b",LOCATION="NA",NORM="Stage_Early stage"
+RULENAME="cm_rStage19",REGEXP="\b(?i)(extensive)(\s*|-)stage\b",LOCATION="NA",NORM="Stage_Extensive"
+RULENAME="cm_rStage20",REGEXP="\b(?i)(extensive)(\s*|-)(%reHistology)\b",LOCATION="NA",NORM="Stage_Extensive"
+RULENAME="cm_rStage21",REGEXP="\b(?i)(extensive)(\s*|-)(%reTumorGrade)\b",LOCATION="NA",NORM="Stage_Extensive"
+RULENAME="cm_rStage22",REGEXP="\b(?i)(IV|4)(\s*|-)stage(\s*|-)small(\s*|-)cell\b",LOCATION="NA",NORM="Stage_Extensive"
+RULENAME="cm_rStage23",REGEXP="\b(?i)stage(\s*|-)(IV|4)(\s*|-)small(\s*|-)cell\b",LOCATION="NA",NORM="Stage_Extensive"
+RULENAME="cm_rStage23",REGEXP="\b(?i)Metastatic(\s*|-)small(\s*|-)cell\b",LOCATION="NA",NORM="Stage_Extensive"
+RULENAME="cm_rStage24",REGEXP="\b(?i)stage(\s*|-)(extensive)\b",LOCATION="NA",NORM="Stage_Extensive"
+RULENAME="cm_rStage24",REGEXP="\b(?i)extensive(\s*|-)stage\b",LOCATION="NA",NORM="Stage_Extensive"
+RULENAME="cm_rStage25",REGEXP="\b(?i)(Limited)(\s*|-)stage\b",LOCATION="NA",NORM="Stage_Limited"
+RULENAME="cm_rStage26",REGEXP="\b(?i)(Limited)(\s*|-)(%reHistology)\b",LOCATION="NA",NORM="Stage_Limited"
+RULENAME="cm_rStage27",REGEXP="\b(?i)(Limited)(\s*|-)(%reTumorGrade)\b",LOCATION="NA",NORM="Stage_Limited"
+RULENAME="cm_rStage28",REGEXP="\b(?i)stage(\s*|-)(Limited)\b",LOCATION="NA",NORM="Stage_Limited"
+
+RULENAME="cm_rStage29",REGEXP="\b(?i)stage(\s*|-)(I|1)\b",LOCATION="NA",NORM="Stage_I"
+RULENAME="cm_rStage30",REGEXP="\b(?i)(I|1)(\s*|-)stage\b",LOCATION="NA",NORM="Stage_I"
+RULENAME="cm_rStage31",REGEXP="\b(?i)stage(\s*|-)(II|2)\b",LOCATION="NA",NORM="Stage_II"
+RULENAME="cm_rStage32",REGEXP="\b(?i)(II|2)(\s*|-)stage\b",LOCATION="NA",NORM="Stage_II"
+RULENAME="cm_rStage33",REGEXP="\b(?i)stage(\s*|-)(III|3)\b",LOCATION="NA",NORM="Stage_III"
+RULENAME="cm_rStage34",REGEXP="\b(?i)(III|3)(\s*|-)stage\b",LOCATION="NA",NORM="Stage_III"
+
+//grade exclusion
+RULENAME="GradeWellDifferentiation_excl",REGEXP="\b(?i)(%reRemove)\b",LOCATION="NA",NORM="EXCLUSION_Grade_well differentiation"
+RULENAME="GradeModerateDifferentiation_excl",REGEXP="\b(?i)(%reRemove)\b",LOCATION="NA",NORM="EXCLUSION_Grade_moderate differentiation"
+RULENAME="GradePoorlyDifferentiation_excl",REGEXP="\b(?i)(%reRemove)\b",LOCATION="NA",NORM="EXCLUSION_Grade_poorly differentiation"
+RULENAME="GradeNonGradeable_excl",REGEXP="\b(?i)(%reRemove)\b",LOCATION="NA",NORM="EXCLUSION_Grade_non gradeable"
+RULENAME="GradeUndifferentiation_excl",REGEXP="\b(?i)(%reRemove)\b",LOCATION="NA",NORM="EXCLUSION_Grade_undifferentiation"
+
+
+
+//chemotherapy
+RULENAME="cm_rChemo1",REGEXP="\b(?i)(%reChemo)\b",LOCATION="NA",NORM="Chemo1"
+//RULENAME="cm_rChemo2",REGEXP="\b(?i)(initiate|reinitiate|began|will begin|begun|status post|complet|progress|get|receiv|proceed|follow|after|undergo|continu)(\s+\S+){0,10}(%reChemo)(.*)(on)*(\d+\/\d+\/\d+)*(Monday|Tuesday|Wednesday|Thursday|Friday|month|date)*\b",LOCATION="NA",NORM="Chemo2"
+
+
+//radiotherapy
+RULENAME="cm_rRadio1",REGEXP="\b(?i)(%reRadio)\b",LOCATION="NA",NORM="Radio1"
+RULENAME="cm_rRadio2",REGEXP="\b(?i)(status post|complet|initiate|reinitiate|begun|will begin|began|progress|get|receiv|proceed|follow|after|undergo|continu)(\s+\S+){0,10}(%reRadio)\b",LOCATION="NA",NORM="Radio2"
+RULENAME="cm_rRadio3",REGEXP="\b(?i)(\d+\s*cGy)\b",LOCATION="NA",NORM="Radio3"
+
+
+//surgery, surgery notes, clinical notes
+RULENAME="cm_rSurgery1",REGEXP="\b(?i)(lung|rib|pulmonary|thoracic|thorax|pleural|bronchial|lobe)(\s+\S+){0,5} (resection|excision)\b",LOCATION="NA",NORM="Surgery"
+RULENAME="cm_rSurgery2",REGEXP="\b(?i)(resection|excision)(\s+\S+){0,5} (lung|rib|pulmonary|thoracic|thorax|pleural|bronchial|lobe)\b",LOCATION="NA",NORM="Surgery"
+RULENAME="cm_rSurgery3",REGEXP="\b(?i)(lobectomy|pneumonectomy|wedge(\s+\S+){0,5} resection|sleeve resection|Video(\s*|-)assisted thoracic surgery|VATS)\b",LOCATION="NA",NORM="Surgery"
+
+RULENAME="cm_rSurgery12",REGEXP="\b(?i)(pneumonectomy)\b",LOCATION="NA",NORM="Surgery_Pneumonectomy"
+
+//Bilobectomy exclude lobectomy
+RULENAME="cm_rSurgery13",REGEXP="\b(?i)(bi(\-|\s*)lobectomy)\b",LOCATION="NA",NORM="Surgery_Bilobectomy"
+
+RULENAME="cm_rSurgery14",REGEXP="\b(?i)(segmentectomy|wedge(\s+\S+){0,5} resection)\b",LOCATION="NA",NORM="Surgery_Wedge"
+RULENAME="cm_rSurgery15",REGEXP="\b(?i)(sleeve resection)\b",LOCATION="NA",NORM="Surgery_Sleeve"
+RULENAME="cm_rSurgery16",REGEXP="\b(?i)(Video(\s*|-)assisted thoracic surgery|VATS)\b",LOCATION="NA",NORM="Surgery_VATS"
+
+//completion pneumonectomy exclude "phemonectomy"
+RULENAME="cm_rSurgery17",REGEXP="\b(?i)(completion(\s+\S+){0,2} pneumonectomy)\b",LOCATION="NA",NORM="Surgery_Completion pneumonectomy"
+
+
+//surgery, clinical notes
+RULENAME="cm_rSurgery4",REGEXP="(?i)(%reSurgery)(\s+\S+){0,10} (%reChemo)",LOCATION="NA",NORM="Surgery"
+RULENAME="cm_rSurgery5",REGEXP="(?i)(%reSurgery)(\s+\S+){0,10} (%reRadio)",LOCATION="NA",NORM="Surgery"
+RULENAME="cm_rSurgery7",REGEXP="(?i)(%reChemo)(\s+\S+){0,10} (%reSurgery)",LOCATION="NA",NORM="Surgery"
+RULENAME="cm_rSurgery9",REGEXP="(?i)(%reRadio)(\s+\S+){0,10} (%reSurgery)",LOCATION="NA",NORM="Surgery"
+RULENAME="cm_rSurgery11",REGEXP="\b(?i)(status post|complet|initiate|reinitiate|begun|will begin|began|progress|get|receiv|proceed|follow|after|undergo|continu)(\s+\S+){0,10}(%reSurgery)\b",LOCATION="NA",NORM="Surgery"
+
+
+//Remove
+RULENAME="all_remv",REGEXP="\b(?i)(DOC_LINK_ID)\b",LOCATION="NA",NORM="REMOVE"
+
+//Exclusion
+RULENAME="Chemo1_excl",REGEXP="\b(%reRem)\b",LOCATION="NA",NORM="EXCLUSION_Chemo1"
+RULENAME="Radio1_excl",REGEXP="\b(%reRem)\b",LOCATION="NA",NORM="EXCLUSION_Radio1"
+RULENAME="Surgery_excl",REGEXP="\b(%reRem)\b",LOCATION="NA",NORM="EXCLUSION_Surgery"
+
+
+//stage exclusion
+RULENAME="stageIV_excl2",REGEXP="\b(?i)(no|questionable|IV sedation|IV hydration|IV fluid/|IV antibiotics|IV therapy|IV for|peripheral IV|IV every|Heparin IV|IV q|continue IV|discontinue IV|IV site|mg|contrast|antibiotic|hour)\b",LOCATION="NA",NORM="EXCLUSION_Stage_IV"
+RULENAME="stageLimit_excl2",REGEXP="\b(?i)(are limited|Limited support|Limited exam|limited to|limited by|limited in|limited with|limited at|limited resection|limited lung)\b",LOCATION="NA",NORM="EXCLUSION_Stage_Limited"
+RULENAME="stageExtensive_excl2",REGEXP="\b(?i)(extensive necrosis|extensive workup)\b",LOCATION="NA",NORM="EXCLUSION_Stage_Extensive"
+RULENAME="stageIa_excl2",REGEXP="\b(?i)(IA \d+)\b",LOCATION="NA",NORM="EXCLUSION_Stage_Ia"
+RULENAME="stageIIb_excl2",REGEXP="\b(?i)(IIB hyperlipidemia)\b",LOCATION="NA",NORM="EXCLUSION_Stage_IIb"
+
+RULENAME="stageIa_excl",REGEXP="\b(?i)(%reRemove)\b",LOCATION="NA",NORM="EXCLUSION_Stage_Ia"
+RULENAME="stageIb_excl",REGEXP="\b(?i)(%reRemove)\b",LOCATION="NA",NORM="EXCLUSION_Stage_Ib"
+RULENAME="stageIIa_excl",REGEXP="\b(?i)(%reRemove)\b",LOCATION="NA",NORM="EXCLUSION_Stage_IIa"
+RULENAME="stageIIb_excl",REGEXP="\b(?i)(%reRemove)\b",LOCATION="NA",NORM="EXCLUSION_Stage_IIb"
+RULENAME="stageIIIa_excl",REGEXP="\b(?i)(%reRemove)\b",LOCATION="NA",NORM="EXCLUSION_Stage_IIIa"
+RULENAME="stageIIIb_excl",REGEXP="\b(?i)(%reRemove)\b",LOCATION="NA",NORM="EXCLUSION_Stage_IIIb"
+RULENAME="stageIV_excl",REGEXP="\b(?i)(%reRemove)\b",LOCATION="NA",NORM="EXCLUSION_Stage_IV"
+RULENAME="stageLateStage_excl",REGEXP="\b(?i)(%reRemove)\b",LOCATION="NA",NORM="EXCLUSION_Stage_Late stage"
+RULENAME="stageEarlyStage_excl",REGEXP="\b(?i)(%reRemove)\b",LOCATION="NA",NORM="EXCLUSION_Stage_Early stage"
+RULENAME="stageExtensive_excl",REGEXP="\b(?i)(%reRemove)\b",LOCATION="NA",NORM="EXCLUSION_Stage_Extensive"
+RULENAME="stageLimited_excl",REGEXP="\b(?i)(%reRemove)\b",LOCATION="NA",NORM="EXCLUSION_Stage_Limited"
+
+
+//histology exclusion
+//RULENAME="HistologyAdenocarcinoma_excl",REGEXP="\b(?i)(%reRemove)\b",LOCATION="NA",NORM="EXCLUSION_Histology_Adenocarcinoma"
+//RULENAME="HistologyAdenosquamous_excl",REGEXP="\b(?i)(%reRemove)\b",LOCATION="NA",NORM="EXCLUSION_Histology_Adenosquamous"
+//RULENAME="HistologyCarcinoid_excl",REGEXP="\b(?i)(%reRemove)\b",LOCATION="NA",NORM="EXCLUSION_Histology_carcinoid"
+//RULENAME="HistologyCarconoidTypicalAtypical_excl",REGEXP="\b(?i)(%reRemove)\b",LOCATION="NA",NORM="EXCLUSION_Histology_Carconoid typical /atypical"
+//RULENAME="HistologyCombinedSmallCell_excl",REGEXP="\b(?i)(%reRemove)\b",LOCATION="NA",NORM="EXCLUSION_Histology_Combined small cell"
+//RULENAME="HistologyNonSmallCell_excl",REGEXP="\b(?i)(%reRemove)\b",LOCATION="NA",NORM="EXCLUSION_Histology_Non-small cell"
+//RULENAME="HistologyLargeLargerNeuroendocrine_excl",REGEXP="\b(?i)(%reRemove)\b",LOCATION="NA",NORM="EXCLUSION_Histology_Large /  larger neuroendocrine"
+//RULENAME="HistologySmallCell_excl",REGEXP="\b(?i)(%reRemove)\b",LOCATION="NA",NORM="EXCLUSION_Histology_Small cell"
+//RULENAME="HistologySquamous_excl",REGEXP="\b(?i)(%reRemove)\b",LOCATION="NA",NORM="EXCLUSION_Histology_Squamous"
+//RULENAME="HistologyOtherCellTypeUnknown_excl",REGEXP="\b(?i)(%reRemove)\b",LOCATION="NA",NORM="EXCLUSION_Histology_other cell type /Unknown"

@@ -1,0 +1,35 @@
+chemo
+chemotherapy
+combined-modality
+combined modality
+cycle
+plantinum
+cisplatin
+carboplatin
+oxaliplatin
+phenanthriplatin
+pemetrexed
+Alimta
+xalkori
+crizotinib
+avastin
+bevacizumab
+gemzar
+gemcitabine
+navelbine
+vinorelbine tartrate
+vinorelbine
+taxol
+Paclitaxel
+docetaxel
+Taxotere
+Tarceva|erlotinib
+Denosumab
+Prolia
+Tagrisso
+osimertinib
+Nivolumab
+Opdivo
+alectinib
+alecensa
+Abraxane

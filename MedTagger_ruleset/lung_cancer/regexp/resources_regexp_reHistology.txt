@@ -1,0 +1,54 @@
+bronchoalveolar carcinoma
+cardinoma NOS
+Adenocarcinoma
+Non(\s*|-)small(\s*|-)cell
+NSCC
+NSCC NOS
+Large cell neuroendocrine
+large cell
+LCNEC
+neuroendocrine
+LCNEM
+Squamous
+larger neuroendocrine
+Large neuroendocrine
+small(\s*|-)cell
+Adenosquamous
+typical carcinoid
+atypical carcinoid
+carcinoid
+Large cell
+Lepidic adenocarcinoma
+Acinar adenocarcinoma
+Papillary adenocarcinoma
+Micropapillary adenocarcinoma
+Solid adenocarcinoma
+Invasive mucinous adenocarcinoma
+Mixed invasive mucinous adenocarcinoma
+Mixed invasive nonmucinous adenocarcinoma
+Colloid adenocarcinoma
+Fetal adenocarcinoma
+Enteric adenocarcinoma
+Minimally invasive adenocarcinoma
+Preinvasive lesions
+Adenocarcinoma in situ
+Keratinizing squamous cell carcinoma
+Nonkeratinizing squamous cell carcinoma
+Basaloid squamous cell carcinoma
+Squamous cell carcinoma in situ
+Combined small cell
+Large cell neuroendocrine
+Combined large cell neuroendocrine
+Preinvasive lesion
+Sarcomatoid
+Pleomorphic carcinoma
+Spindle cell carcinoma
+Giant cell carcinoma
+Pulmonary blastoma
+Lymphoepithelioma-like carcinoma
+Nuclear protein in testis carcinoma
+NUT carcinoma
+Salivary gland-type
+Mucoepidermoid carcinoma
+Adenoid cystic carcinoma
+Epithelial-myoepithelial carcinoma
